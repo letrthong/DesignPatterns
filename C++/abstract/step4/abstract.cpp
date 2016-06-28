@@ -9,51 +9,66 @@
 #include <iostream>
 using namespace std;
 
-class Flyable
-{
-public:
-    virtual void fly() = 0;
-};
-
-class Quackable{
-public:
-     virtual void quack() = 0;
-};
-
 class Duck
 {
 public:
+    
+    virtual void quack()
+    {
+        cout<<"I can quack"<<endl;
+    }
+    
     void swim()
     {
        cout<<"I can swim "<<endl;
     }
- 
-    virtual void display()=0;
+    
+    virtual void fly(){
+        cout<<"I can fly "<<endl;
+    }
+    virtual void display() = 0;
 };
 
 
-class RedheadDuck: public Duck,public virtual  Flyable, public virtual  Quackable
+class DallorDuck  :public  Duck
 {
- public:
+public:
+    void display()
+    {
+        cout<< "I am DallorDuck"<<endl;
+    }
+};
+
+class RedheadDuck: public Duck
+{
     void display()
     {
          cout<< "I am RedheadDuck"<<endl;
     }
-    
-    void fly()
+};
+
+class RubberDuck: public Duck
+{
+    void display()
     {
-           cout<< "I can fly"<<endl;
+         cout<< "I am RubberDuck"<<endl;
+    }
+    
+    void fly(){
+        cout<<"I can not fly "<<endl;
     }
     
     void quack()
     {
-            cout<< "I can quack"<<endl;
+        cout<<"I can not quack"<<endl;
     }
 };
 
+
+
 int main()
 {
-    RedheadDuck *ptr= new RedheadDuck();
+    Duck *ptr= new RubberDuck();
     if(ptr == NULL)
     {
         return 0;
@@ -61,7 +76,7 @@ int main()
     
     ptr->display();
     ptr->swim();
-    ptr->fly();
+     ptr->fly();
     
     delete ptr;
     ptr = NULL;
