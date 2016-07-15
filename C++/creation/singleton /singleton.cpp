@@ -21,7 +21,7 @@ public :
 
 	void discription()
 	{
-		cout<<" singleton in design pattern " <<endl;
+		cout<<" singleton in design patterns " <<endl;
 	}
 
 private :

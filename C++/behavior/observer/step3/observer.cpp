@@ -46,7 +46,7 @@ private :
 
 int main()
 {
-    Server  *pDevices = new Server();
+    Server *pDevices = new Server();
     pDevices->addDevice(new Device(1));
     pDevices->addDevice(new Device(2));
     pDevices->update();
