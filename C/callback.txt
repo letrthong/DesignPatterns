@@ -1,0 +1,27 @@
+// Example program
+#include <iostream>
+#include <string>
+using namespace std;
+
+typedef   int (* callback)(int , int);
+
+
+int sum(int a, int b)
+{
+    int ret =  a + b;
+    cout<<"sum "<< a <<"+" << b <<"= "<< ret<<endl; 
+    return ret;
+}
+
+
+int main()
+{
+      callback  p = sum; 
+      
+      p(4,5);
+       p(6,6);
+      return 0;
+}
+
+
+//https://opensourceforu.com/2012/02/function-pointers-and-callbacks-in-c-an-odyssey/
