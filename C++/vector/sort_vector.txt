@@ -1,0 +1,78 @@
+#include <vector>
+#include <iostream>
+#include <string>
+ 
+#include <bits/stdc++.h>
+int main()
+{
+   // This is a vector of int
+    std::vector<int> vecOfInts;
+ 
+    // While Adding it automatically adjusts it's size
+    for(int i = 0; i < 10; i++)
+    {
+        
+        vecOfInts.push_back(i);
+    }
+    
+    for(int i  = 20; i > 10 ; i--)
+    {
+        vecOfInts.push_back(i);
+    }
+ 
+    std::vector<int>::iterator it = vecOfInts.begin();
+    while(it != vecOfInts.end())
+    {
+        std::cout<<*it<<" , ";
+        it++;
+    }
+    
+    sort(vecOfInts.begin(), vecOfInts.end()); 
+    std::cout<<std::endl;
+ 
+    for(int i = 0; i < vecOfInts.size(); i++)
+        std::cout<<vecOfInts[i]<<" , ";
+ 
+    std::cout<<std::endl;
+ 
+    return 0;
+}
+
+
+/*
+
+#include <vector>
+#include <iostream>
+#include <string>
+ 
+#include <bits/stdc++.h>
+int main()
+{
+   // This is a vector of int
+    std::vector<std::string> vecOfInts;
+ 
+    // While Adding it automatically adjusts it's size
+     vecOfInts.push_back("123-4");
+     vecOfInts.push_back("123-1");
+     vecOfInts.push_back("123-3");
+     vecOfInts.push_back("13-3");
+      vecOfInts.push_back("11-3");
+ 
+    std::vector<std::string>::iterator it = vecOfInts.begin();
+    
+    while(it != vecOfInts.end())
+    {
+        std::cout<<*it<<" , ";
+        it++;
+    }
+    
+    sort(vecOfInts.begin(), vecOfInts.end()); 
+    std::cout<<std::endl;
+ 
+    for(int i = 0; i < vecOfInts.size(); i++)
+        std::cout<<vecOfInts[i]<<" , ";
+ 
+    std::cout<<std::endl;
+ 
+    return 0;
+}*/
