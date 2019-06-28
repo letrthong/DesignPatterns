@@ -9,21 +9,39 @@ public:
 	virtual ~Subject() {}
 };
  
-class RealSubject : public Subject 
+class RealSubject01 : public Subject 
 {
 public:
 	void request() { 
-		cout << "RealSubject.request()" << endl; 
+		cout << "RealSubject01.request()" << endl; 
 	}
 };
  
+class RealSubject02 : public Subject 
+{
+public:
+	void request() { 
+		cout << "RealSubject02.request()" << endl; 
+	}
+};
+
+
 class Proxy : public Subject 
 {
 private:
 	Subject* realSubject;
 public:
-	Proxy() : realSubject (new RealSubject()) 
-	{}
+	Proxy(int id)  
+	{
+	    if(id == 0)
+	    {
+	         realSubject= new RealSubject01;
+	    }
+	    else
+	    {
+	        realSubject= new RealSubject02;
+	    }
+	 }
 	~Proxy() { 
 		delete realSubject; 
 	}
@@ -34,6 +52,9 @@ public:
 };
  
 int main() {
-	Proxy p;
+	Proxy p(1);
 	p.request();
 }
+
+
+//https://www.bogotobogo.com/DesignPatterns/proxy.php
