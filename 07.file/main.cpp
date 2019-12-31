@@ -22,9 +22,6 @@ using namespace std;
 *
 **********************************************************/
 
- 
- 
-
 class FileSystem{
   public:
      FileSystem(){
@@ -101,21 +98,16 @@ class FileSystem{
 		
 		 char buffer[SIZE_MAX_WORD] ={}; 
 		 if (_myFile.is_open() ){
-			// _myFile.seekg(index,_myFile.beg);
-			_myFile.flush();
 			 _myFile.seekg(index, ios::beg);
 			 _myFile.read(buffer, SIZE_MAX_WORD -1); 
+			 text = std::string(buffer);
+
+			std::cout << "readfile  index =" << index  <<" buffer="<<buffer<<endl;
+			if(_myFile.is_open()){
+				_myFile.close(); 
+			}
 		 }else{
 			  std::cout << "read  Error open";
-		 }
-		
-
-		text = std::string(buffer);
-
-		 std::cout << "readfile  index =" << index  <<" buffer="<<buffer<<endl;
-
-		 if(_myFile.is_open()){
-			  _myFile.close(); 
 		 }
 	 }
 	 
@@ -163,9 +155,8 @@ class FileSystem{
 				_myFile.seekg(0,ios::beg);
 				_myFile.read(buffer, POSITION_BODY_START -1); 
 			}
-
-			
-		 header = std::string(buffer);
+		
+		 	header = std::string(buffer);
 			if(_myFile.is_open()){
 				_myFile.close(); 
 			}
