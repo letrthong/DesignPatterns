@@ -1,4 +1,5 @@
 //https://www.tutorialspoint.com/compile_cpp11_online.php
+// https://docs.microsoft.com/en-us/cpp/cpp/lambda-expression-syntax?view=msvc-160
 
 #include <iostream>
 using namespace  std;
