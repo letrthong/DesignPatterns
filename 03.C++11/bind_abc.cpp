@@ -34,3 +34,4 @@ int main()
     
     return 0;
 }
+// https://en.cppreference.com/w/cpp/utility/functional/bind
